@@ -104,7 +104,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .store-link {
     display: inline-block;
-    margin: 50px 0 20px
+    margin: 10px 0
 }
 .store-link img {
     padding: 10px;
@@ -116,4 +116,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 .store-link:active img {
     background: #ccc
+}
+#retweet_button {
+    margin: 48px 0;
+}
+.two-column {
+    overflow: hidden;
+    width: 600px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+.two-column .left {
+    float: left;
+    width: 48%;
+}
+.two-column .right {
+    float: left;
+    width: 48%;
+}
+@media (max-width: 568px) {
+    .two-column .left, .two-column .right {
+        float: none;
+    }
+}
+.logo {
+    margin: 20px 0 40px;
+    width: 64px;
 }
