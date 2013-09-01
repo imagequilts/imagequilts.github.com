@@ -57,67 +57,66 @@
             font-size: 13px;
             line-height: 20px;
             color: #6f6f6f;
-            margin: 0;
+            margin: 0
         }
         .header a {
             color: inherit;
             border-bottom: 1px dashed #3c3c3c;
-            text-decoration: none;
+            text-decoration: none
         }
         .header a:hover {
             color: #f6f6f6;
             border-color: #ccc;
-            text-decoration: none;
+            text-decoration: none
+        }
+        .header a:active {
+            color: #ccc
         }
         .quilt {
             padding: 0 20px;
             overflow: hidden;
-            margin: 0 auto;
+            margin: 0 auto
         }
         @media (max-width: 568px) {
             .quilt {
-                padding: 0;
+                padding: 0
             }
         }
         .quilt img {
             width: 950px;
-            max-width: 100%;
+            max-width: 100%
         }
         .quilt.medium img {
-            width: 1200px;
+            width: 1200px
         }
         .quilt.large img {
-            width: 1680px;
+            width: 1680px
         }
         .quilt h3 {
             font-size: 21px;
             margin: 55px 0 40px;
             color: #6f6f6f;
-            letter-spacing: 1px;
+            letter-spacing: 1px
         }
         @media (max-width: 568px) {
             .quilt h3 {
                 font-size: 13px;
-                margin: 42px 0 30px;
+                margin: 42px 0 30px
             }
-        }
-        .store-description {
-            color: inherit;
-            text-decoration: none;
-            margin: 70px 0;
-            display: block;
-        }
-        .store-description a {
-            text-decoration: none;
         }
         .store-link {
             display: block;
-            margin-top: 15px;
+            margin-top: 15px
         }
-        .store-link:hover {
-            color: #f6f6f6;
-            border-color: #ccc;
-            text-decoration: none;
+        .store-link img {
+            padding: 10px;
+            border-radius: 4px
+        }
+        .store-link:hover img {
+            background: #f6f6f6
+        }
+        .store-link:active img {
+            background: #ccc
         }
     </style>
 </head>
@@ -126,6 +125,9 @@
         <h1 class="brand-color">ImageQuilts</h1>
         <h2><a href="http://tufte.com">Edward Tufte</a> &amp; <a href="http://adamschwartz.co">Adam Schwartz</a></h2>
     </div>
+    <a class="store-link" href="https://chrome.google.com/webstore/detail/imagequilts/ceebcpbapdnfnkhfogkbhbgknhgnaoee">
+        <img src="images/chrome-web-store.png" />
+    </a>
     <div class="quilts">
         <div class="quilt medium">
             <h3>Eadweard Muybridge</h3>
@@ -139,23 +141,7 @@
             <h3>Paul Cézanne</h3>
             <img src="images/quilts/cezanne.png" />
         </div>
-        <!--
-        <div class="quilt">
-            <h3>Sparklines</h3>
-            <img src="images/quilts/cezanne.png" />
-        </div>
-        <div class="quilt">
-            <h3>Paul Klee</h3>
-            <img src="images/quilts/cezanne.png" />
-        </div>
-        -->
     </div>
-    <span class="store-description">
-        Download <a class="brand-color" href="https://chrome.google.com/webstore/detail/imagequilts/ceebcpbapdnfnkhfogkbhbgknhgnaoee">ImageQuilts</a> on the Chrome Web Store
-        <a class="store-link" href="https://chrome.google.com/webstore/detail/imagequilts/ceebcpbapdnfnkhfogkbhbgknhgnaoee">
-            <img src="images/chrome-web-store.png" />
-        </a>
-    </span>
     <div style="-webkit-transform: translateZ(0);"></div>
 </body>
 </html>
