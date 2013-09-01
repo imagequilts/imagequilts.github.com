@@ -24,6 +24,10 @@
             font-family: "latoregular", "Helvetica Neue", sans-serif;
             text-align: center;
             margin: 100px 0;
+            color: #6f6f6f;
+        }
+        .brand-color {
+            color: #e0d38b;
         }
         @media (max-width: 568px) {
             body {
@@ -46,7 +50,6 @@
             height: 42px;
             font-size: 37px;
             line-height: 40px;
-            color: #e0d38b;
             margin: 0;
         }
         .header h2 {
@@ -80,6 +83,12 @@
             width: 950px;
             max-width: 100%;
         }
+        .quilt.medium img {
+            width: 1200px;
+        }
+        .quilt.large img {
+            width: 1680px;
+        }
         .quilt h3 {
             font-size: 21px;
             margin: 55px 0 40px;
@@ -92,19 +101,33 @@
                 margin: 42px 0 30px;
             }
         }
-        .store-link {
+        .store-description {
+            color: inherit;
+            text-decoration: none;
             margin: 70px 0;
             display: block;
+        }
+        .store-description a {
+            text-decoration: none;
+        }
+        .store-link {
+            display: block;
+            margin-top: 15px;
+        }
+        .store-link:hover {
+            color: #f6f6f6;
+            border-color: #ccc;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>ImageQuilts</h1>
+        <h1 class="brand-color">ImageQuilts</h1>
         <h2><a href="http://tufte.com">Edward Tufte</a> &amp; <a href="http://adamschwartz.co">Adam Schwartz</a></h2>
     </div>
     <div class="quilts">
-        <div class="quilt">
+        <div class="quilt medium">
             <h3>Eadweard Muybridge</h3>
             <img src="images/quilts/muybridge.png" />
         </div>
@@ -112,7 +135,7 @@
             <h3>Sorting Algorithms</h3>
             <img src="images/quilts/sorting.png" />
         </div>
-        <div class="quilt">
+        <div class="quilt large">
             <h3>Paul Cézanne</h3>
             <img src="images/quilts/cezanne.png" />
         </div>
@@ -127,7 +150,12 @@
         </div>
         -->
     </div>
-    <a class="store-link" href="https://chrome.google.com/webstore/detail/imagequilts/ceebcpbapdnfnkhfogkbhbgknhgnaoee"><img src="images/chrome-web-store.png" /></a>
+    <span class="store-description">
+        Download <a class="brand-color" href="https://chrome.google.com/webstore/detail/imagequilts/ceebcpbapdnfnkhfogkbhbgknhgnaoee">ImageQuilts</a> on the Chrome Web Store
+        <a class="store-link" href="https://chrome.google.com/webstore/detail/imagequilts/ceebcpbapdnfnkhfogkbhbgknhgnaoee">
+            <img src="images/chrome-web-store.png" />
+        </a>
+    </span>
     <div style="-webkit-transform: translateZ(0);"></div>
 </body>
 </html>
