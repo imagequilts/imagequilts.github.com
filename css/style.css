@@ -84,12 +84,6 @@ h1, h2, h3, h4, h5, h6 {
     width: 950px;
     max-width: 100%
 }
-.quilt.medium img {
-    width: 1200px
-}
-.quilt.large img {
-    width: 1680px
-}
 .quilt h3 {
     font-size: 21px;
     margin: 55px 0 40px;
