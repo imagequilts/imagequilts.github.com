@@ -113,6 +113,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 #retweet_button {
     margin: 48px 0;
+    -webkit-filter: invert(1) grayscale(1);
 }
 .two-column {
     overflow: hidden;
@@ -137,4 +138,43 @@ h1, h2, h3, h4, h5, h6 {
 .logo {
     margin: 20px 0 40px;
     width: 64px;
+}
+.app {
+    max-width: 910px;
+    margin: 70px auto 0;
+    padding: 30px 20px 20px;
+    background: #222;
+}
+.app h3 {
+    color: #f6f6f6;
+}
+.app p {
+    margin: .5em 0 1.6em;
+}
+.app a {
+    color: #d3cdad;
+    border-bottom: 1px dashed #3c3c3c;
+    text-decoration: none
+}
+.app a:hover {
+    color: #f6f6f6;
+    border-color: #ccc;
+    text-decoration: none
+}
+.app a:active {
+    color: #ccc
+}
+.video-container {
+    position: relative;
+    padding-bottom: 54%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 101%;
+    height: 100%;
 }
