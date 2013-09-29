@@ -90,6 +90,9 @@ h1, h2, h3, h4, h5, h6 {
     color: #6f6f6f;
     letter-spacing: 1px
 }
+.quilt h3 > div {
+    font-size: 0.75em;
+}
 @media (max-width: 568px) {
     .quilt h3 {
         font-size: 13px;
