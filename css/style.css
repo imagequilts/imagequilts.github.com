@@ -47,14 +47,16 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 38px;
     margin: 0;
     letter-spacing: 2px;
-    font-style: italic
+    font-style: italic;
+    text-transform: none;
 }
 .header h2 {
     height: 14px;
     font-size: 18px;
     line-height: 23px;
     color: #6f6f6f;
-    margin: 0
+    margin: 0;
+    text-transform: none;
 }
 @media (max-width: 568px) {
     .header {
