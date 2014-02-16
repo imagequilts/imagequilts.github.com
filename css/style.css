@@ -24,6 +24,8 @@ body {
 h1, h2, h3, h4, h5, h6 {
     margin: 0 1em;
     text-transform: uppercase;
+    font-weight: 400;
+    font-weight: normal;
 }
 .header {
     margin-bottom: 30px;
@@ -36,26 +38,33 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 80px;
     font-style: italic;
     color: red;
+    font-weight: 400;
     font-weight: normal;
     letter-spacing: 1px;
     text-align: center;
     width: auto
 }
 .header h1 {
+    font-family: "Futura", "Gill Sans", "latoregular", "Helvetica Neue", sans-serif;
     height: 58px;
     font-size: 42px;
     line-height: 38px;
     margin: 0;
     letter-spacing: 2px;
     font-style: italic;
+    font-weight: 400;
+    font-weight: normal;
     text-transform: none;
 }
 .header h2 {
+    font-family: "Futura", "Gill Sans", "latoregular", "Helvetica Neue", sans-serif;
     height: 14px;
     font-size: 18px;
     line-height: 23px;
     color: #6f6f6f;
     margin: 0;
+    font-weight: 400;
+    font-weight: normal;
     text-transform: none;
 }
 @media (max-width: 568px) {
