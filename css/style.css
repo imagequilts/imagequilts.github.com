@@ -145,6 +145,7 @@ h1, h2, h3, h4, h5, h6 {
 #retweet_button {
     margin: 48px 0;
     -webkit-filter: invert(1) grayscale(1);
+    -webkit-transform: translateZ(0);
 }
 .two-column {
     overflow: hidden;
