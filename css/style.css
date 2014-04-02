@@ -1,5 +1,5 @@
 html, body {
-    margin: 0;
+    margin: 0
 }
 body {
     -webkit-user-select: none;
@@ -11,14 +11,14 @@ body {
     font-family: "Futura", "Gill Sans", "latoregular", "Helvetica Neue", sans-serif;
     text-align: center;
     margin: 100px 0;
-    color: #6f6f6f;
+    color: #6f6f6f
 }
 .brand-color {
-    color: red;
+    color: red
 }
 @media (max-width: 568px) {
     body {
-        margin: 40px 0;
+        margin: 40px 0
     }
 }
 h1, h2, h3, h4, h5, h6 {
@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
     font-style: italic;
     font-weight: 400;
     font-weight: normal;
-    text-transform: none;
+    text-transform: none
 }
 .header h2 {
     font-family: "Futura", "Gill Sans", "latoregular", "Helvetica Neue", sans-serif;
@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
     font-weight: 400;
     font-weight: normal;
-    text-transform: none;
+    text-transform: none
 }
 @media (max-width: 568px) {
     .header {
@@ -119,7 +119,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 1px
 }
 .quilt h3 > div {
-    font-size: 0.75em;
+    font-size: 0.75em
 }
 @media (max-width: 568px) {
     .quilt h3 {
@@ -145,39 +145,39 @@ h1, h2, h3, h4, h5, h6 {
 #retweet_button {
     margin: 48px 0;
     -webkit-filter: invert(1) grayscale(1);
-    -webkit-transform: translateZ(0);
+    -webkit-transform: translateZ(0)
 }
 .two-column {
     overflow: hidden;
     width: 600px;
     max-width: 100%;
     margin: 0 auto;
-    padding: 60px 0;
+    padding: 60px 0
 }
 .two-column .left {
     float: left;
-    width: 48%;
+    width: 48%
 }
 .two-column .right {
     float: left;
-    width: 48%;
+    width: 48%
 }
 @media (max-width: 568px) {
     .two-column .left, .two-column .right {
-        float: none;
+        float: none
     }
 }
 .app {
     max-width: 910px;
     margin: 70px auto 0;
     padding: 30px 20px 20px;
-    background: #222;
+    background: #222
 }
 .app h3 {
-    color: #f6f6f6;
+    color: #f6f6f6
 }
 .app p {
-    margin: .5em 0 1.6em;
+    margin: .5em 0 1.6em
 }
 .app a {
     color: #aaa;
@@ -197,12 +197,12 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 54%;
     padding-top: 30px;
     height: 0;
-    overflow: hidden;
+    overflow: hidden
 }
 .video-container iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 101%;
-    height: 100%;
+    height: 100%
 }
