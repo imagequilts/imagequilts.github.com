@@ -95,6 +95,12 @@ h1, h2, h3, h4, h5, h6 {
     color: #ccc
 }
 .quilt {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 950px;
+    max-width: 100%;
     padding: 0 20px;
     overflow: hidden;
     margin: 0 auto
@@ -104,9 +110,18 @@ h1, h2, h3, h4, h5, h6 {
         padding: 0
     }
 }
+.quilt .responsive-image-container {
+    position: relative;
+    height: 0;
+    overflow: hidden
+}
+.quilt .responsive-image-container.loading {
+    background: #222
+}
 .quilt img {
-    width: 950px;
-    max-width: 100%
+    position: absolute;
+    left: 0;
+    width: 100%
 }
 .quilt.wider img {
     width: 1200px;
