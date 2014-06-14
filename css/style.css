@@ -7,7 +7,7 @@ body {
     -ms-user-select: none;
     -o-user-select: none;
     user-select: none;
-    background: #000;
+    background: black;
     font-family: "Futura", "Gill Sans", "latoregular", "Helvetica Neue", sans-serif;
     text-align: center;
     margin: 100px 0;
@@ -105,22 +105,24 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
     margin: 0 auto
 }
+.quilt.text {
+    text-align: left
+}
+.quilt.text img {
+    width: auto;
+    max-width: 100%
+}
 @media (max-width: 568px) {
     .quilt {
         padding: 0
     }
 }
-.quilt .responsive-image-container {
-    position: relative;
-    height: 0;
-    overflow: hidden
-}
-.quilt .responsive-image-container.loading {
-    background: #222
+.quilt .image-container.loading {
+    background: #222;
+    min-height: 250px;
+    margin: 10px 0
 }
 .quilt img {
-    position: absolute;
-    left: 0;
     width: 100%
 }
 .quilt.wider img {
@@ -220,4 +222,16 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 101%;
     height: 100%
+}
+.preview-actions {
+    margin-top: 70px
+}
+.preview-actions a {
+    background: red;
+    color: black;
+    border: 0;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 10px;
+    margin-right: 10px
 }
