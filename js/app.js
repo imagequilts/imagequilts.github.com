@@ -42,9 +42,11 @@
                 }
                 quiltsHTML += '' +
                     '<div class="quilt ' + (isText === true ? 'text' : '') +'">' +
-                        (isText === true ? '' : '<h3>' + title + '</h3>') +
-                        '<div class="image-container">' +
-                            '<img ' + (quiltNumber > 0 ? 'data-' : '') + 'src="' + quilt.dl_url + '">' + // TODO - use orig_url instead?
+                        '<div class="quilt-inner">' +
+                            (isText === true ? '' : '<h3>' + title + '</h3>') +
+                            '<div class="image-container">' +
+                                '<img ' + (quiltNumber > 0 ? 'data-' : '') + 'src="' + quilt.dl_url + '">' + // TODO - use orig_url instead?
+                            '</div>' +
                         '</div>' +
                     '</div>' +
                 '';
@@ -53,7 +55,20 @@
                 }
             }
         });
+
         $('.quilts-inner').html(quiltsHTML);
+
+        $('.quilts-inner > .quilt:not(".text") img').each(function(){
+            var $img = $(this);
+            var $quilt = $img.parents('.quilt');
+            $img.click(function(){
+                if ($quilt.attr('fullscreen')) {
+                    $quilt.removeAttr('fullscreen');
+                } else {
+                    $quilt.attr('fullscreen', true);
+                }
+            });
+        });
 
         if (isPreview === true) {
             $('.header').append(
