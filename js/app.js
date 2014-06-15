@@ -78,8 +78,8 @@
         var constrainFullScreenImageQuilt = function() {
             $fullscreenImage = $('.quilt[fullscreen] img');
 
-            var originalHeight = parseInt($fullscreenImage.attr('original-height'), 10);
-            var originalWidth = parseInt($fullscreenImage.attr('original-width'), 10);
+            var originalHeight = parseInt($fullscreenImage.attr('original-height'), 10) * 10;
+            var originalWidth = parseInt($fullscreenImage.attr('original-width'), 10) * 10;
 
             var height = originalHeight;
             var width = originalWidth;
