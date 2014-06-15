@@ -122,6 +122,9 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 250px;
     margin: 10px 0
 }
+.quilt.text .image-container.loading {
+    background: #000;
+}
 .quilt img {
     width: 100%
 }
@@ -234,4 +237,7 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
     padding: 10px;
     margin-right: 10px
+}
+.preview-actions .message {
+    margin-top: 40px;
 }

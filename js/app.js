@@ -1,7 +1,11 @@
 (function(){
     var titleFromFileName = function(filename) {
         var title = '';
-        var name = filename.match(/^\d+\-(.*)\.png$/)[1];
+        var match = filename.match(/^\d+\-(.*)\.png$/);
+        if (!match || match.length !== 2) {
+            return undefined;
+        }
+        var name = match[1];
         var words = name.split(' ');
         $.each(words, function(i, word){
             words[i] = word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
@@ -11,20 +15,43 @@
 
     window.loadQuilts = function(quilts) {
         var quiltsHTML = '';
+        var quiltNumber = 0;
+        var sortRegex = /^(\d+)\-.*$/
+        quilts.sort(function(a, b){
+            var aValue = '';
+            var bValue = '';
+            var aMatch = a.filename.match(sortRegex);
+            if (aMatch && aMatch.length == 2) {
+                aValue = parseInt(aMatch[1], 10);
+            }
+            var bMatch = b.filename.match(sortRegex);
+            if (bMatch && bMatch.length == 2) {
+                bValue = parseInt(bMatch[1], 10);
+            }
+            if (aValue < bValue) return -1;
+            if (aValue > bValue) return 1;
+            return 0;
+        });
         $.each(quilts, function(i, quilt){
             var title = titleFromFileName(quilt.filename);
-            var text = false;
-            if (title.toLowerCase().split('text').length > 1) {
-                text = true;
-            }
-            quiltsHTML += '' +
-                '<div class="quilt ' + (text === true ? 'text' : '') +'">' +
-                    (text === true ? '' : '<h3>' + title + '</h3>') +
-                    '<div class="image-container">' +
-                        '<img ' + (i > 0 ? 'data-' : '') + 'src="' + quilt.dl_url + '">' + // TODO - use orig_url instead?
+            if (title) {
+                var isText = false;
+                var match = title.match(/(.*)\.text$/);
+                if (match && match.length == 2) {
+                    isText = true;
+                }
+                quiltsHTML += '' +
+                    '<div class="quilt ' + (isText === true ? 'text' : '') +'">' +
+                        (isText === true ? '' : '<h3>' + title + '</h3>') +
+                        '<div class="image-container">' +
+                            '<img ' + (quiltNumber > 0 ? 'data-' : '') + 'src="' + quilt.dl_url + '">' + // TODO - use orig_url instead?
+                        '</div>' +
                     '</div>' +
-                '</div>' +
-            '';
+                '';
+                if (!isText) {
+                    quiltNumber += 1;
+                }
+            }
         });
         $('.quilts-inner').html(quiltsHTML);
 
@@ -34,29 +61,39 @@
                     .append(
                         $('<a>Generate Preview</a>').click(function(){
                             var $link = $(this);
-                            $link.text('Generating preview...');
-                            $.get('http://' + server + 'generate/index.php?preview=true', function(){
-                                $link.text('Done');
-                                window.location.reload();
+                            $('.preview-actions .message').text('Generating preview...');
+                            $.ajax({
+                                url: 'http://' + server + 'generate/index.php?preview=true',
+                                complete: function() {
+                                    $('.preview-actions .message').html('Preview generated. Refreshing...');
+                                    window.location.reload();
+                                }
                             });
                         })
                     )
                     .append(
                         $('<a>Publish</a>').click(function(){
-                            var $link = $(this);
-                            $link.text('Publishing...');
-                            $.get('http://' + server + 'generate/index.php', function(){
-                                $link.text('Published');
-                                location.href = location.protocol + '//' + location.host + location.pathname;
-                            });
+                            var password = prompt("Enter publish password:");
+                            if (password) {
+                                var $link = $(this);
+                                $('.preview-actions .message').text('Publishing...');
+                                $.ajax({
+                                    url: 'http://' + server + 'generate/index.php?password=' + password,
+                                    complete: function() {
+                                        $('.preview-actions .message').html('Published');
+                                        $link.text('Publish');
+                                    }
+                                });
+                            }
                         })
                     )
+                    .append('<div class="message">&nbsp;</div>')
             );
         }
     };
 
     var isPreview = location.search === '?preview';
-    var server = (location.hostname === 'localhost' && false) ? 'localhost:8888/ImageQuiltsServer/' : 'polymath.mit.edu/projects/imagequilts/';
+    var server = (location.hostname === 'localhost') ? 'localhost:8888/ImageQuiltsServer/' : 'polymath.mit.edu/projects/imagequilts/';
     var dataPath = isPreview === true ? 'data/preview.js' : 'data/live.js';
     $.getScript('http://' + server + dataPath);
 
