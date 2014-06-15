@@ -132,12 +132,14 @@ h1, h2, h3, h4, h5, h6 {
     max-width: auto;
     text-align: center;
     margin: auto;
+    padding: 20px;
 }
 .quilt[fullscreen] .quilt-inner .image-container img {
     width: auto;
     height: 100%;
     max-width: 100%;
     max-height: 100%;
+    box-shadow: 0 0 20px #000;
     cursor: -webkit-zoom-out;
     cursor: -moz-zoom-out;
 }
