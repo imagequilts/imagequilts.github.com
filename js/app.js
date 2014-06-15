@@ -64,26 +64,13 @@
             }
 
             if ($quilt.attr('fullscreen')) {
-                $('.fullscreen-placeholder').remove();
-                // $quilt.removeAttr('fullscreen');
+                $quilt.removeAttr('fullscreen');
                 $img.css({
                     height: '100%',
                     width: '100%'
                 });
-                // var forceReRender = $quilt[0].clientHeight;
-                // var forceReRender = $quilt.find('img')[0].clientHeight;
             } else {
-                var quiltHeight = $quilt.height();
-                var quiltWidth = $quilt.height();
-                // $quilt.before(
-                //     $('<div class="quilt fullscreen-placeholder"></div>').css({
-                //         height: quiltHeight,
-                //         width: quiltWidth
-                //     })
-                // );
                 $quilt.attr('fullscreen', true);
-                // var forceReRender = $quilt[0].clientHeight;
-                // var forceReRender = $quilt.find('img')[0].clientHeight;
                 constrainFullScreenImageQuilt();
             }
         });
