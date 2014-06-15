@@ -158,15 +158,16 @@
             $img.parent().addClass('loading');
             if (scrollPosition > ($(this).offset().top - 1000)) {
                 var src = $(this).attr('data-src');
-                var img = new Image();
-                img.onload = function() {
-                    $img.parent().removeClass('loading');
-                    $img.parent().attr('loaded', true);
-                    $img.attr('src', src);
-                    $img.attr('original-height', img.height);
-                    $img.attr('original-width', img.width);
-                };
-                img.src = src;
+                var $newImage = $('<img class="actual-image-being-loaded">');
+                $img.after($newImage);
+                $img.remove();
+                $newImage.attr('src', src);
+                $newImage.load(function(){
+                    $newImage.parent().removeClass('loading');
+                    $newImage.parent().attr('loaded', true);
+                    $newImage.attr('original-height', this.height);
+                    $newImage.attr('original-width', this.width);
+                });
             }
         })
     });

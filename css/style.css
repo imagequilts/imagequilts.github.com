@@ -161,6 +161,9 @@ body[fullscreen-quilt] .fullscreen-quilt {
     min-height: 250px;
     margin: 10px 0
 }
+.quilt .image-container.loading img {
+    opacity: 0.1;
+}
 .quilt.text .image-container.loading {
     background: #000;
 }
