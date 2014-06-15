@@ -15,7 +15,6 @@
 
     window.loadQuilts = function(quilts) {
         var quiltsHTML = '';
-        var quiltNumber = 0;
         var sortRegex = /^(\d+)\-.*$/
         quilts.sort(function(a, b){
             var aValue = '';
@@ -45,18 +44,16 @@
                         '<div class="quilt-inner">' +
                             (isText === true ? '' : '<h3>' + title + '</h3>') +
                             '<div class="image-container">' +
-                                '<img ' + (quiltNumber > 0 ? 'data-' : '') + 'src="' + quilt.dl_url + '">' + // TODO - use orig_url instead?
+                                '<img data-src="' + quilt.dl_url + '">' + // TODO - use orig_url instead?
                             '</div>' +
                         '</div>' +
                     '</div>' +
                 '';
-                if (!isText) {
-                    quiltNumber += 1;
-                }
             }
         });
 
         $('.quilts-inner').html(quiltsHTML);
+        $(window).scroll();
 
         $('.quilts-inner > .quilt:not(".text") img').each(function(){
             var $img = $(this);
@@ -64,10 +61,49 @@
             $img.click(function(){
                 if ($quilt.attr('fullscreen')) {
                     $quilt.removeAttr('fullscreen');
+                    $img.css({
+                        height: '100%',
+                        width: '100%'
+                    });
                 } else {
                     $quilt.attr('fullscreen', true);
+                    constrainFullScreenImageQuilt();
                 }
             });
+        });
+
+        var constrainFullScreenImageQuilt = function() {
+            $fullscreenImage = $('.quilt[fullscreen] img');
+
+            var originalHeight = parseInt($fullscreenImage.attr('original-height'), 10);
+            var originalWidth = parseInt($fullscreenImage.attr('original-width'), 10);
+
+            var height = originalHeight;
+            var width = originalWidth;
+
+            var windowHeight = $(window).height();
+            var windowWidth = $(window).width();
+
+            if (height > windowHeight) {
+                height = windowHeight - 20;
+                width = (height / originalHeight) * originalWidth;
+            }
+
+            if (width > windowWidth) {
+                width = windowWidth - 20;
+                height = (width / originalWidth) * originalHeight;
+            }
+
+            if ($fullscreenImage.length) {
+                $fullscreenImage.css({
+                    height: height,
+                    width: width
+                });
+            }
+        };
+
+        $(window).resize(function(){
+            constrainFullScreenImageQuilt();
         });
 
         if (isPreview === true) {
@@ -127,6 +163,8 @@
                     $img.parent().removeClass('loading');
                     $img.parent().attr('loaded', true);
                     $img.attr('src', src);
+                    $img.attr('original-height', img.height);
+                    $img.attr('original-width', img.width);
                 };
                 img.src = src;
             }

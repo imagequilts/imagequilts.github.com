@@ -111,6 +111,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .quilt[fullscreen] .quilt-inner {
     position: fixed;
+    display: table;
+    width: 100%;
+    height: 100%;
     top: 0;
     right: 0;
     bottom: 0;
@@ -124,19 +127,13 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
 }
 .quilt[fullscreen] .quilt-inner .image-container {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    max-width: auto;
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
     text-align: center;
-    margin: auto;
-    padding: 20px;
 }
 .quilt[fullscreen] .quilt-inner .image-container img {
-    width: auto;
-    height: 100%;
     max-width: 100%;
     max-height: 100%;
     box-shadow: 0 0 20px #000;
