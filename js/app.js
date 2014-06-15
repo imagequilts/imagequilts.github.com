@@ -55,21 +55,37 @@
         $('.quilts-inner').html(quiltsHTML);
         $(window).scroll();
 
-        $('.quilts-inner > .quilt:not(".text") img').each(function(){
+        $('.quilts-inner').on('click', 'img', function(){
             var $img = $(this);
             var $quilt = $img.parents('.quilt');
-            $img.click(function(){
-                if ($quilt.attr('fullscreen')) {
-                    $quilt.removeAttr('fullscreen');
-                    $img.css({
-                        height: '100%',
-                        width: '100%'
-                    });
-                } else {
-                    $quilt.attr('fullscreen', true);
-                    constrainFullScreenImageQuilt();
-                }
-            });
+
+            if ($img.parents('.image-container').hasClass('loading')) {
+                return;
+            }
+
+            if ($quilt.attr('fullscreen')) {
+                $('.fullscreen-placeholder').remove();
+                // $quilt.removeAttr('fullscreen');
+                $img.css({
+                    height: '100%',
+                    width: '100%'
+                });
+                // var forceReRender = $quilt[0].clientHeight;
+                // var forceReRender = $quilt.find('img')[0].clientHeight;
+            } else {
+                var quiltHeight = $quilt.height();
+                var quiltWidth = $quilt.height();
+                // $quilt.before(
+                //     $('<div class="quilt fullscreen-placeholder"></div>').css({
+                //         height: quiltHeight,
+                //         width: quiltWidth
+                //     })
+                // );
+                $quilt.attr('fullscreen', true);
+                // var forceReRender = $quilt[0].clientHeight;
+                // var forceReRender = $quilt.find('img')[0].clientHeight;
+                constrainFullScreenImageQuilt();
+            }
         });
 
         var constrainFullScreenImageQuilt = function() {
@@ -158,7 +174,7 @@
             $img.parent().addClass('loading');
             if (scrollPosition > ($(this).offset().top - 1000)) {
                 var src = $(this).attr('data-src');
-                var $newImage = $('<img class="actual-image-being-loaded">');
+                var $newImage = $('<img>');
                 $img.after($newImage);
                 $img.remove();
                 $newImage.attr('src', src);
