@@ -156,7 +156,7 @@
             if ($img.parent().attr('loaded'))
                 return;
             $img.parent().addClass('loading');
-            if (scrollPosition > $(this).offset().top) {
+            if (scrollPosition > ($(this).offset().top - 1000)) {
                 var src = $(this).attr('data-src');
                 var img = new Image();
                 img.onload = function() {
