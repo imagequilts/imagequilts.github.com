@@ -298,3 +298,17 @@ body[fullscreen-quilt] .fullscreen-quilt {
 .preview-actions .message {
     margin-top: 40px;
 }
+.imagequilt-of-quilts {
+    width: 950px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center
+}
+.imagequilt-of-quilts {
+    font-size: 0;
+}
+.imagequilt-of-quilts img {
+    height: 100px;
+    display: inline-block;
+}

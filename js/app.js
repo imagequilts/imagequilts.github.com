@@ -13,9 +13,20 @@
         return words.join(' ');
     };
 
+    var idFromFileName = function(filename) {
+        var title = '';
+        var match = filename.match(/^(\d+)\-(.*)\.png$/);
+        if (!match || match.length !== 3) {
+            return undefined;
+        }
+        return match[1];
+    };
+
     window.loadQuilts = function(quilts) {
+        var imagequiltOfQuiltsHTML = '';
         var quiltsHTML = '';
         var sortRegex = /^(\d+)\-.*$/
+
         quilts.sort(function(a, b){
             var aValue = '';
             var bValue = '';
@@ -31,6 +42,17 @@
             if (aValue > bValue) return 1;
             return 0;
         });
+
+        $.each(quilts, function(i, quilt){
+            imagequiltOfQuiltsHTML += '' +
+                '<a href="#quilt' + idFromFileName(quilt.filename) + '">' +
+                    '<img src="' + quilt.gallery_thumb + '">' +
+                '</a>' +
+            '';
+        });
+
+        $('.imagequilt-of-quilts').html(imagequiltOfQuiltsHTML);
+
         $.each(quilts, function(i, quilt){
             var title = titleFromFileName(quilt.filename);
             if (title) {
@@ -42,7 +64,10 @@
                 quiltsHTML += '' +
                     '<div class="quilt ' + (isText === true ? 'text' : '') +'">' +
                         '<div class="quilt-inner">' +
-                            (isText === true ? '' : '<h3>' + title + '</h3>') +
+                            (isText === true ? '' : '' +
+                                '<a id="quilt' + idFromFileName(quilt.filename) + '"></a>' +
+                                '<h3>' + title + '</h3>'
+                            ) +
                             '<div class="image-container">' +
                                 '<img data-src="' + quilt.dl_url + '">' + // TODO - use orig_url instead?
                             '</div>' +
