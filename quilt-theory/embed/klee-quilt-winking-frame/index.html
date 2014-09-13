@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Klee Quilt with Winking Frame — Quilt Theory Embed</title>
+    <link href="../../css/style.css" rel="stylesheet">
+    <link href="../../css/embed.css" rel="stylesheet">
+</head>
+<body>
+    <div class="grid framed smiley">
+        <row>
+            <column><img src="../../images/klee-quilt/1.png" /></column>
+            <column><img src="../../images/klee-quilt/2.png" /></column>
+            <column><img src="../../images/klee-quilt/3.png" /></column>
+            <column><img src="../../images/klee-quilt/4.png" /></column>
+        </row>
+        <row>
+            <column><img src="../../images/klee-quilt/5.png" /></column>
+            <column><img src="../../images/klee-quilt/6.png" /></column>
+            <column><img src="../../images/klee-quilt/7.png" /></column>
+            <column><img src="../../images/klee-quilt/8.png" /></column>
+        </row>
+        <row>
+            <column><img src="../../images/klee-quilt/9.png" /></column>
+            <column><img src="../../images/klee-quilt/10.png" /></column>
+            <column><img src="../../images/klee-quilt/11.png" /></column>
+            <column><img src="../../images/klee-quilt/12.png" /></column>
+        </row>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        var wink = function() {
+            setTimeout(function(){
+                $('.smiley').attr('wink', true);
+                setTimeout(function(){
+                    $('.smiley').removeAttr('wink');
+                }, 400);
+                wink();
+            }, (Math.random() * 1000 * 4));
+        };
+        wink();
+    </script>
+</body>
+</html>
