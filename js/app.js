@@ -147,7 +147,8 @@
     };
 
     var isPreview = location.search === '?preview';
-    var server = (location.hostname === 'localhost') ? 'localhost:8888/ImageQuiltsServer/' : 'polymath.mit.edu/projects/imagequilts/';
+    //var server = (location.hostname === 'localhost') ? 'localhost:8888/ImageQuiltsServer/' : 'polymath.mit.edu/projects/imagequilts/';
+    var server = 'polymath.mit.edu/projects/imagequilts/';
     var dataPath = isPreview === true ? 'data/preview.js' : 'data/live.js';
     $.getScript('http://' + server + dataPath);
 

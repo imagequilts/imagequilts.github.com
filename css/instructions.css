@@ -1,0 +1,59 @@
+.instructions {
+    width: 1076px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    /* max-width: 100%; */
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Gill Sans", "Futura", "latoregular", "Helvetica Neue", sans-serif;
+    font-size: 20px;
+    line-height: 1.35em;
+    text-align: left;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    color: #ccc;
+    letter-spacing: .022em;
+    text-indent: .022em;
+}
+.instructions h2 {
+    font-family: "Futura", "Gill Sans", "latoregular", "Helvetica Neue", sans-serif;
+    letter-spacing: 2px;
+    margin: 1.5em auto;
+    text-indent: 2px;
+    font-weight: 400;
+    font-weight: normal;
+    text-transform: none;
+    text-align: center;
+}
+.instructions a {
+    color: inherit;
+    text-decoration: underline;
+}
+.instructions p {
+    margin: 1.5em 0;
+    width: 600px;
+    max-width: 100%;
+}
+.instructions .figure {
+    position: relative;
+    margin-top: -.5em;
+    margin-bottom: 2.5em;
+}
+.instructions span.logo {
+    font-family: "Futura", "Gill Sans", "latoregular", "Helvetica Neue", sans-serif;
+    letter-spacing: 1px;
+    color: red;
+    font-weight: 400;
+    font-weight: normal;
+    text-transform: none;
+    text-align: center;
+    font-style: italic;
+}
+.instructions .times-icon {
+    font-size: 1.5em;
+    display: inline-block;
+    vertical-align: bottom;
+}

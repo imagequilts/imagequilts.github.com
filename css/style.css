@@ -37,6 +37,10 @@ body {
     .banner {
         display: none;
     }
+
+    .instructions {
+        display: none;
+    }
 }
 .banner a {
     color: red
@@ -365,4 +369,33 @@ body[fullscreen-quilt] .fullscreen-quilt {
 }
 .preview-actions .message {
     margin-top: 40px;
+}
+.copyright-information {
+    width: 540px;
+    max-width: 100%;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Gill Sans", "Futura", "latoregular", "Helvetica Neue", sans-serif;
+    font-size: 18px;
+    line-height: 1.35em;
+    text-align: left;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    color: #ccc;
+    letter-spacing: .022em;
+}
+.copyright-information-inner {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.copyright-information a {
+    color: inherit
+}
+.fester-quilts .quilt p {
+    text-align: left;
+}
+.fester-quilts .quilt p a {
+    color: inherit;
+    text-decoration: underline;
 }
