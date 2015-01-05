@@ -193,6 +193,9 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
     overflow: visible;
 }
+.quilt[fullscreen] p {
+    display: none;
+}
 .quilt[fullscreen] .quilt-inner {
     position: absolute;
     z-index: 99999;
@@ -258,6 +261,14 @@ body[fullscreen-quilt] .fullscreen-quilt {
     width: 1200px;
     max-width: 100%
 }
+.quilt p {
+    text-align: left;
+}
+.quilt p a {
+    color: #aaa;
+    border-bottom: 1px solid #3c3c3c;
+    text-decoration: none
+}
 .quilt h3 {
     font-size: 21px;
     margin: 55px 0 40px;
@@ -314,23 +325,17 @@ body[fullscreen-quilt] .fullscreen-quilt {
     }
 }
 .app {
-    max-width: 910px;
-    margin: 70px auto 0;
-    padding: 30px 20px 20px;
+    margin: 70px auto 90px;
+    padding: 50px 40px 40px;
     background: #222;
     position: relative;
     z-index: 2;
 }
-.app h3 {
-    color: #f6f6f6
-}
-.app p {
+.instructions .app p {
+    text-align: center;
+    width: 100%;
+    font-size: 1.125em;
     margin: .5em 0 1.6em
-}
-.app a {
-    color: #aaa;
-    border-bottom: 1px solid #3c3c3c;
-    text-decoration: none
 }
 .app a:hover {
     color: #f6f6f6;
@@ -370,32 +375,75 @@ body[fullscreen-quilt] .fullscreen-quilt {
 .preview-actions .message {
     margin-top: 40px;
 }
-.copyright-information {
-    width: 540px;
-    max-width: 100%;
+.instructions {
+    width: 995px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    /* max-width: 100%; */
     margin-top: 100px;
+    margin-bottom: 100px;
     margin-left: auto;
     margin-right: auto;
     font-family: "Gill Sans", "Futura", "latoregular", "Helvetica Neue", sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.35em;
     text-align: left;
     -webkit-font-smoothing: antialiased;
     font-weight: 400;
     color: #ccc;
     letter-spacing: .022em;
+    text-indent: .022em;
 }
-.copyright-information-inner {
-    padding-left: 10px;
-    padding-right: 10px;
+.instructions h2 {
+    font-family: "Futura", "Gill Sans", "latoregular", "Helvetica Neue", sans-serif;
+    letter-spacing: 2px;
+    margin: 1.5em auto;
+    text-indent: 2px;
+    font-weight: 400;
+    font-weight: normal;
+    text-transform: none;
+    text-align: center;
 }
-.copyright-information a {
-    color: inherit
+.instructions .app h2 {
+    margin-top: 0
 }
-.fester-quilts .quilt p {
-    text-align: left;
+.instructions h3 {
+    font-family: "Futura", "Gill Sans", "latoregular", "Helvetica Neue", sans-serif;
+    letter-spacing: 2px;
+    margin: 1.5em auto;
+    text-indent: 2px;
+    font-weight: 400;
+    font-weight: normal;
+    text-transform: none;
 }
-.fester-quilts .quilt p a {
-    color: inherit;
-    text-decoration: underline;
+.instructions a {
+    color: #aaa;
+    border-bottom: 1px solid #3c3c3c;
+    text-decoration: none
+}
+.instructions p {
+    margin: 1.5em 0;
+    width: 600px;
+    max-width: 100%;
+}
+.instructions .figure {
+    position: relative;
+    margin-top: -.5em;
+    margin-bottom: 2.5em;
+}
+.instructions span.logo {
+    font-family: "Futura", "Gill Sans", "latoregular", "Helvetica Neue", sans-serif;
+    letter-spacing: 1px;
+    color: red;
+    font-weight: 400;
+    font-weight: normal;
+    text-transform: none;
+    text-align: center;
+    font-style: italic;
+}
+.instructions .times-icon {
+    font-size: 1.5em;
+    display: inline-block;
+    vertical-align: bottom;
 }
