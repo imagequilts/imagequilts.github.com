@@ -347,7 +347,7 @@ body[fullscreen-quilt] .fullscreen-quilt {
 }
 .video-container {
     position: relative;
-    padding-bottom: 54%;
+    padding-bottom: 58.9%;
     padding-top: 30px;
     height: 0;
     overflow: hidden
@@ -357,7 +357,7 @@ body[fullscreen-quilt] .fullscreen-quilt {
     z-index: 1;
     top: 0;
     left: 0;
-    width: 101%;
+    width: 100%;
     height: 100%
 }
 .preview-actions {
