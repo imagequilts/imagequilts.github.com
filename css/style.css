@@ -177,6 +177,10 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
     margin: 0 auto
 }
+.quilt.full-width {
+    width: 100%;
+    padding: 0
+}
 .quilt .image-container[loaded] img {
     cursor: -webkit-zoom-in;
     cursor: -moz-zoom-in;
