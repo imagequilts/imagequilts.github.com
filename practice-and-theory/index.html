@@ -141,6 +141,44 @@
             </video>
         </div>
 
+        <p style="width: 100%; font-size: 1.25em; text-transform: uppercase; letter-spacing: .07em">Powerpoint example</p>
+
+        <p>Here is an <a href="http://www.slideshare.net/sarimeenu/nasa-3-ppt-on-physics-class-8">example slide deck</a> displayed by Preview in Mac OS.</p>
+
+        <div class="figure">
+            <img style="max-width: 100%" src="images/instructions/pp-example-before.png" />
+        </div>
+
+        <p>Here is the same slide deck produced as a quilt produced by following the instructions above.</p>
+
+        <div class="figure">
+            <img style="max-width: 100%" src="images/instructions/pp-example-after.png" />
+        </div>
+
+        <h3>Vertical Quilt Grids</h3>
+
+        <p>In ImageQuilts, each quilt is composed of many images flowing left-to-right top-to-bottom just as text flows in English and many other languages.</p>
+
+        <p>To produce a gap-less quilt within this flow, images in each row of the quilt must have the same height. This, combined with the goal of preserving the original aspect ratio of each image (which may differ from one to another) results in an arbitrary horizontal alignment of images. Put another way, all images in the quilt have the <em>same height</em> but may have <em>different widths</em>.</p>
+
+        <div class="figure">
+            <img style="max-width: 50%" src="images/quilts/raza.png" />
+        </div>
+
+        <p>If instead we choose a flow which is top-to-bottom left-to-right, the result is flipped. Images within each <em>column</em> will have the <em>same width</em> but may have <em>different heights</em>.</p>
+
+        <div class="figure">
+            <img style="max-width: 50%" src="images/quilts/raza-vertical-flow.png" />
+        </div>
+
+        <p>This technique is relatively simple to implement in modern browsers with Cascading Style Sheets (CSS).</p>
+
+        <p>In July, 2011 by Chris Coyier published a piece at his site CSS Tricks, entitled <a href="https://css-tricks.com/seamless-responsive-photo-grid/">Seamless Responsive Photo Grid</a>, outlining this technique. The main trick is to tell the browser to display a part of the page column-wise instead of row-wise.</p>
+
+        <div class="figure">
+            <img style="max-width: 50%" src="images/instructions/vertical-flow-css.png" />
+        </div>
+
         <br>
 
         <h3>Copyright Information</h3>
